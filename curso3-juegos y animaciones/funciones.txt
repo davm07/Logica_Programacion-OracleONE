@@ -1,0 +1,5 @@
+Math.floor = sirve para redondear el numero obtenido
+al entero menor mas cercano.
+
+Math.round = sirve para redondear el numero obtenido
+al entero mayor mas cercano.

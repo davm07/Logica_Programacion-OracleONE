@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+        function dibujarRectangulo(x, y, base, altura, color) {
+            let pantalla = document.querySelector("canvas");
+            let pincel = pantalla.getContext("2d");
+
+            pincel.fillStyle=color;
+            pincel.fillRect(x,y, base, altura);
+            pincel.strokeStyle="black";
+            pincel.strokeRect(x,y, base, altura);
+        }
+
+        function escribirTexto(x , y, texto) {
+            let pantalla = document.querySelector("canvas");
+            let pincel = pantalla.getContext("2d");
+
+            pincel.font="15px Georgia";
+            pincel.fillStyle="black";
+            pincel.fillText(texto, x, y);    
+        }
+
+        function dibujarBarra(x, y, serie, colores, texto) {
+
+            escribirTexto(x, y - 5, texto);
+
+            let i = 0;
+            while (i < serie.length) {
+                dibujarRectangulo(x, y, 50, serie[i], colores[i]);
+                y += serie[i];
+                i++;
+            }
+            /*for (let porcentaje = 0; porcentaje < serie.length; porcentaje++) {
+                dibujarRectangulo(x, y, 60, serie[porcentaje], colores[porcentaje])
+                y += serie[porcentaje]
+            }*/
+            
+            //Aquí necesitamos escribir el texto y dibujar los rectángulos
+
+        }
+
+        let serie2009 = [6, 47, 41, 3, 3];
+        let serie2019 = [81, 9, 3, 3, 4];
+
+        let colores = ["blue","green","yellow", "red","gray"];
+
+        dibujarBarra(50, 50, serie2009, colores, "2009");
+        dibujarBarra(150, 50, serie2019, colores, "2019");
+
+
+        //Aquí viene el texto faltante
+
+    </script>
+</body>
+</html>

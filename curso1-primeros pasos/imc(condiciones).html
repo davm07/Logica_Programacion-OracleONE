@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Programa calculando indice de masa corporal</h1>
+    <script>
+
+        function saltarlinea() {
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<br>");
+        }
+
+        function imprimir(frase) {
+            document.write(frase);
+            saltarlinea();
+        }
+
+        function calcularIMC(peso, altura) {
+            imc = peso / (altura * altura);
+            return imc;
+        }
+
+        nombre = prompt("Cual es su nombre");
+        peso_ask = prompt(nombre + " informe su peso");
+        altura_ask = prompt(nombre + " informe su altura");
+        imc = calcularIMC(peso_ask, altura_ask);
+
+        imprimir(nombre + "su IMC calculado es: " + imc);
+
+        if (imc < 18.5) {
+            imprimir("Abajo de lo recomendado");
+        }
+
+        else if (imc >= 18.5 && imc < 25) {
+            imprimir("En el rango sugerido")
+        }
+
+        else if (imc >= 25 && imc < 30) {
+            imprimir("Llegando a ser gordo")
+        }
+
+        else if (imc >= 30) {
+            imprimir("Obesidad");
+        }
+
+
+    </script>
+</body>
+</html>
